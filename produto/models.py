@@ -5,6 +5,7 @@ import os
 from django.conf import settings
 from PIL import Image
 from django.utils.text import slugify
+from utils import helpers
 
 """
     Produto:
@@ -38,7 +39,8 @@ class Produto(models.Model):
         )
     )
     def get_preco_formatado(self):
-        return f'R$ {self.preco_marketing:.2f}'.replace('.',',')
+        #return f'R$ {self.preco_marketing:.2f}'.replace('.',',')
+        return helpers.formata_preco(self.preco_marketing)
     get_preco_formatado.short_description = 'Preço'
 
     @staticmethod

@@ -27,8 +27,8 @@ urlpatterns = [
 # TODO: Remover Debug Toolbar 
 if settings.DEBUG: 
     urlpatterns = [
-    path('', include('produto.urls')),
-    path('/pedido', include('pedido.urls')),
-    path('/perfil', include('perfil.urls')),
-    path('__debug__/', include('debug_toolbar.urls')),
+        path('', include('produto.urls')),
+        path('perfil/', include('perfil.urls')),
+        path('pedido/', include('pedido.urls')),
+        path('__debug__/', include('debug_toolbar.urls')),
     ] + urlpatterns
